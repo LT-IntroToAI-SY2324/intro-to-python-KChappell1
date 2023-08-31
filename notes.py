@@ -6,7 +6,7 @@
 
 # str
 y = "I love Computer Science!"
-
+print(y)
 # numbers
 mynum = 47
 anothernum = 47.7
