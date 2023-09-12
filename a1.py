@@ -76,7 +76,11 @@ def sum_list(lst: List[int]) -> int:
     Returns:
         the sum of the passed in list
     """
-    raise NotImplementedError("sum_list")
+    n = 0
+    for x in lst:
+        n = n+x 
+    return(n)
+    # raise NotImplementedError("sum_list")
 
 
 def mean(lst: List[int]) -> float:
@@ -88,7 +92,14 @@ def mean(lst: List[int]) -> float:
     Returns:
         the mean of the passed in list
     """
-    raise NotImplementedError("mean")
+    tot = 0
+    count = 0
+    for x in lst: 
+        tot += x
+        count += 1
+    tot = tot/count
+    return(tot)
+    # raise NotImplementedError("mean")
 
 
 def median(lst: List[int]) -> float:
@@ -103,7 +114,10 @@ def median(lst: List[int]) -> float:
     Returns:
         the median of the passed in list
     """
-    raise NotImplementedError("median")
+    import statistics
+    res = statistics.median(lst)
+    return(res)
+    # raise NotImplementedError("median")
 
 
 def duck_duck_goose(lst: List[str]) -> List[str]:
@@ -124,8 +138,39 @@ def duck_duck_goose(lst: List[str]) -> List[str]:
 
     Returns:
         the resulting list after playing duck duck goose
-    """
-    raise NotImplementedError("duck_duck_goose")
+    """ 
+    global counter
+    counter = 0
+    def duckooseRun(): 
+        print(lst)
+        for x in lst:
+            global counter
+            counter += 1
+            if counter == 3:
+                print(x)
+                lst.remove(x)
+                print(lst)
+                counter = 1
+    def duckooseCheck():
+        count = 0
+        yn = False
+        for i in lst:
+            count += 1
+            if count == 2: 
+                track = 0
+                for x in lst: 
+                    track += 1 
+                if track > 2:
+                    track = 0
+                    duckooseRun()
+                else: 
+                    yn = True 
+            else: 
+                duckooseRun()
+        if yn == True: 
+            return(lst)
+    duckooseCheck()
+    # raise NotImplementedError("duck_duck_goose")
 
 
 # this line causes the nested code to be skipped if the file is imported instead of run
