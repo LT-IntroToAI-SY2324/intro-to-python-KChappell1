@@ -13,11 +13,10 @@ Mr. Berg will look at all your files to determine what you have completed.  If t
 ## Reflection Questions
 
 1. What is your initial thoughts about the python programming language?
-
-
+Because python was the first programming language I learned how to use it is oddly nostalgic. Also it is weird going from Java to python the habits just don't match. However python is very convienient with the way it is operated andthe functional use of shortcuts. 
 
 2. Describe some similarities and differences that you found between python and other programming languages you have used in the past?
-
+It is similar in the 
 
 
 3. What are some things that you learned through this assignment?

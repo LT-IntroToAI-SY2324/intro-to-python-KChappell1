@@ -92,6 +92,8 @@ def mean(lst: List[int]) -> float:
     Returns:
         the mean of the passed in list
     """
+    if not lst:
+        return 0
     tot = 0
     count = 0
     for x in lst: 
@@ -139,37 +141,45 @@ def duck_duck_goose(lst: List[str]) -> List[str]:
     Returns:
         the resulting list after playing duck duck goose
     """ 
-    global counter
-    counter = 0
-    def duckooseRun(): 
-        print(lst)
-        for x in lst:
-            global counter
-            counter += 1
-            if counter == 3:
-                print(x)
-                lst.remove(x)
-                print(lst)
-                counter = 1
-    def duckooseCheck():
-        count = 0
-        yn = False
-        for i in lst:
-            count += 1
-            if count == 2: 
-                track = 0
-                for x in lst: 
-                    track += 1 
-                if track > 2:
-                    track = 0
-                    duckooseRun()
-                else: 
-                    yn = True 
-            else: 
-                duckooseRun()
-        if yn == True: 
-            return(lst)
-    duckooseCheck()
+    # global counter
+    # counter = 0
+    # def duckooseRun(): 
+    #     print(lst)
+    #     for x in lst:
+    #         global counter
+    #         if counter == 2:
+    #             print(x)
+    #             lst.remove(x)
+    #             print(lst)
+    #             counter = 0
+    #         counter += 1
+            
+    # def duckooseCheck():
+    #     people = 0
+    #     yn = False
+    #     for i in lst:
+    #         people += 1
+    #         if people == 2: 
+    #             track = 0
+    #             for x in lst: 
+    #                 track += 1 
+    #             if track > 2:
+    #                 track = 0
+    #                 duckooseRun()
+    #             else: 
+    #                 yn = True 
+    #         else: 
+    #             duckooseRun()
+    #     if yn == True: 
+    #         return(lst)
+    # duckooseCheck()
+    i = 0
+    while len(lst) > 2: 
+        i += 2 
+        if i >= len(lst):
+            i -= len(lst)
+        lst.pop(i)
+    return lst
     # raise NotImplementedError("duck_duck_goose")
 
 
